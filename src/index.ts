@@ -1,7 +1,9 @@
-import * as core from './heap';
+import { minHeap } from './core/min-heap';
+import { maxHeap } from './core/max-heap';
 
 const api = {
-    ...core,
+    ...minHeap,
+    ...maxHeap,
 };
 
 declare global {
@@ -12,4 +14,5 @@ declare global {
 
 window.mzHeap = window.mzHeap || api;
 
-export * from './heap';
+export * from './core/min-heap';
+export * from './core/max-heap';

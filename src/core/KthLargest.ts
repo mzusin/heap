@@ -1,7 +1,11 @@
-export class Heap {
+/*
+export class KthLargest {
 
     data: [];
     max: number;
+
+    // Space complexity: O(K)
+    // Time complexity: O(N log K)
 
     constructor(k, nums){
         this.data = [];
@@ -87,4 +91,10 @@ export class Heap {
 
         this.topBottom(0);
     }
-}
+}*/
+
+/**
+ * Your KthLargest object will be instantiated and called as such:
+ * var obj = new KthLargest(k, nums)
+ * var param_1 = obj.add(val)
+ */
