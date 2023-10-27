@@ -1,6 +1,57 @@
 # Heap (Binary Heap, Priority Queue)
 
-### Space and Time Complexity
+Typescript implementation of minimum and maximum heap (priority queue).
+
+## maxHeap
+
+```ts
+import { maxHeap } from './src/core/max-heap';
+
+const heap = maxHeap();
+
+heap.add(5);
+heap.add(3);
+
+console.log(heap.peek());
+console.log(heap.size());
+
+heap.poll();
+heap.poll();
+```
+
+```ts
+import { minHeap } from './src/core/min-heap';
+
+const heap = minHeap();
+
+heap.add(5);
+heap.add(3);
+
+console.log(heap.peek());
+console.log(heap.size());
+
+heap.poll();
+heap.poll();
+```
+
+## minHeap
+
+```ts
+import { maxHeap } from './src/core/max-heap';
+
+const heap = maxHeap();
+
+heap.add(5);
+heap.add(3);
+
+console.log(heap.peek());
+console.log(heap.size());
+
+heap.poll();
+heap.poll();
+```
+
+## Space and Time Complexity
 
 - Construct a Heap
   - Time complexity: **O(N)**
