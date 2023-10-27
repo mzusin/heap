@@ -15,10 +15,10 @@ export const minHeap = () => {
 
         if(size() <= 1) return;
 
-        const parenti = Math.floor((index - 1) / 2);
-        if(data[parenti] > data[index]){
-            [data[parenti], data[index]] = [data[index], data[parenti]];
-            bottomUp(parenti);
+        const parentIndex = Math.floor((index - 1) / 2);
+        if(data[parentIndex] > data[index]){
+            [data[parentIndex], data[index]] = [data[index], data[parentIndex]];
+            bottomUp(parentIndex);
         }
     };
 
@@ -27,15 +27,15 @@ export const minHeap = () => {
         const n = size();
 
         let smaller = index;
-        const lefti = 2*index + 1;
-        const righti = lefti + 1;
+        const leftChildIndex = 2 * index + 1;
+        const rightChildIndex = leftChildIndex + 1;
 
-        if(lefti < n && data[lefti] < data[smaller]){
-            smaller = lefti;
+        if(leftChildIndex < n && data[leftChildIndex] < data[smaller]){
+            smaller = leftChildIndex;
         }
 
-        if(righti < n && data[righti] < data[smaller]){
-            smaller = righti;
+        if(rightChildIndex < n && data[rightChildIndex] < data[smaller]){
+            smaller = rightChildIndex;
         }
 
         if(index !== smaller){
@@ -65,10 +65,16 @@ export const minHeap = () => {
         return size() > 0 ? data[0] : null;
     };
 
+    const isLeaf = (index: number) => {
+        const n = size();
+        return index >= Math.floor(n / 2) && index < n;
+    };
+
     return {
         add,
         poll,
         peek,
         size,
+        isLeaf,
     }
 };

@@ -3,4 +3,5 @@ export interface IHeap {
     poll: () => number | null;
     peek: () => number | null;
     size: () => number;
+    isLeaf: (index: number) => boolean;
 }
