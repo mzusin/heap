@@ -1,4 +1,4 @@
-import * as core from './core';
+import * as core from './heap';
 
 const api = {
     ...core,
@@ -12,4 +12,4 @@ declare global {
 
 window.mzHeap = window.mzHeap || api;
 
-export * from './core';
+export * from './heap';

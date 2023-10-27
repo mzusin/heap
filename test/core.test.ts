@@ -9,7 +9,7 @@ import {
     getRowIterative,
     maxProfit,
     isSubsequence,
-} from '../src/core';
+} from '../src/heap';
 
 describe('Core', () => {
 
