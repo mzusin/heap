@@ -1,2 +1,1 @@
-export * from './core/min-heap';
-export * from './core/max-heap';
+export * from './core/core';

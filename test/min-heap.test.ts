@@ -1,6 +1,6 @@
 import {
     minHeap,
-} from '../src/core/min-heap';
+} from '../src/core/core';
 import { IHeap } from '../src/interfaces';
 
 describe('Min Heap', () => {

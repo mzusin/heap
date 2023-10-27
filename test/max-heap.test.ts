@@ -1,6 +1,6 @@
 import {
     maxHeap,
-} from '../src/core/max-heap';
+} from '../src/core/core';
 import { IHeap } from '../src/interfaces';
 
 describe('Max Heap', () => {

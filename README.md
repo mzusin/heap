@@ -14,6 +14,7 @@ heap.add(3);
 
 console.log(heap.peek());
 console.log(heap.size());
+console.log(heap.isLeaf(1));
 
 heap.poll();
 heap.poll();
@@ -29,6 +30,7 @@ heap.add(3);
 
 console.log(heap.peek());
 console.log(heap.size());
+console.log(heap.isLeaf(1));
 
 heap.poll();
 heap.poll();
