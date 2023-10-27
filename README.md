@@ -62,6 +62,14 @@ heap.poll();
 - To **add** a node, add it to the end of the tree, and then correct the condition (**heapify**).
 - To **delete** a node in root, take the last node and put it instead of root, and then correct the condition (**heapify**).
 
+## Usage
+
+1. Priority queue.
+2. To find min/max in O(1), while removing and adding in O(log n).
+3. [Heap Sort](https://leetcode.com/explore/learn/card/heap/645/applications-of-heap/4030/)
+4. The Top-K problem.
+5. The K-th element.
+
 ## Space and Time Complexity
 
 - Construct a Heap
