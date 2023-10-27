@@ -60,7 +60,7 @@ heap.poll();
 - **Min heap** - the minimum value on top, and for each node its children >= parent node.
 - **Max heap** - the maximum value on top, and for each node its children <= parent node.
 - To **add** a node, add it to the end of the tree, and then correct the condition (**heapify**).
-- To **delete** a node in root, take the last node and put it instead of root, and then correct the condition (**heapify**).
+- To **delete** a node, take the last node and put it instead of root, and then correct the condition (**heapify**).
 
 ## Usage
 

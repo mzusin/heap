@@ -102,11 +102,19 @@ export const heap = (type: HeapType) : IHeap => {
         }
     };
 
+    /**
+     * To add a node, add it to the end of the tree,
+     * and then correct the condition.
+     */
     const add = (val: number) => {
         data.push(val);
         bottomUp(data.length - 1);
     };
 
+    /**
+     * To delete a node, take the last node and put it instead of root,
+     * and then correct the condition.
+     */
     const poll = () : number|null => {
         if(size() <= 0) return null;
 
