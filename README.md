@@ -5,7 +5,7 @@ Typescript implementation of minimum and maximum heap (priority queue).
 ## maxHeap
 
 ```ts
-import { maxHeap } from './src/core/max-heap';
+import { maxHeap } from './src/core/main';
 
 const heap = maxHeap();
 
@@ -21,7 +21,7 @@ heap.poll();
 ```
 
 ```ts
-import { minHeap } from './src/core/min-heap';
+import { minHeap } from './src/core/main';
 
 const heap = minHeap();
 
@@ -52,6 +52,15 @@ console.log(heap.size());
 heap.poll();
 heap.poll();
 ```
+
+## Heap
+
+- Heap is a type of **binary tree**.
+- This is a **complete binary tree** i.e. it is filled strictly from left to right, it is impossible for there to be a branch on the right and not a branch on the left. Reverse case can be only at the very end of the tree.
+- **Min heap** - the minimum value on top, and for each node its children >= parent node.
+- **Max heap** - the maximum value on top, and for each node its children <= parent node.
+- To **add** a node, add it to the end of the tree, and then correct the condition (**heapify**).
+- To **delete** a node in root, take the last node and put it instead of root, and then correct the condition (**heapify**).
 
 ## Space and Time Complexity
 

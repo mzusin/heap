@@ -1,8 +1,23 @@
 import { IHeap } from '../interfaces';
-import { HeapType } from './core';
+import { HeapType } from './main';
 
 /**
  * Heap as array implementation.
+ * There are two standard algorithms for building a heap.
+ *
+ * 1. The first is to start with an empty heap and to repeatedly insert elements into it one at a time.
+ * Each individual insertion takes time O(log n).
+ * It turns out that, in the worst case, the runtime is Θ(n log n),
+ * which happens if you insert the elements in reverse-sorted order.
+ *
+ * 2. The second approach is the heapify algorithm.
+ * This algorithm runs in time O(n) regardless of the input.
+ * Correct algorithm: start at the end of the array and move backwards towards the front.
+ * At each iteration, you move an item down until it is in the correct location. O(n) time.
+ *
+ * The heapify algorithm is also used when you already have a ready-made array of data.
+ * The first algorithm is used when you do not know in advance how much and what kind of data there will be.
+ * If you're getting elements one at a time, the heapify algorithm is not as good.
  */
 export const heap = (type: HeapType) : IHeap => {
 
@@ -51,7 +66,7 @@ export const heap = (type: HeapType) : IHeap => {
 
         const n = size();
 
-        let smallerOrLargest = index;
+        let smallerOrLargest = index; // largest for max heap, smaller for min heap
         const leftChildIndex = 2 * index + 1;
         const rightChildIndex = leftChildIndex + 1;
 
