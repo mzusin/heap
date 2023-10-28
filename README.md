@@ -4,14 +4,14 @@ Typescript implementation of minimum and maximum heap (priority queue).
 
 ## Documentation
 
-| Method  | Description                                                                                                                                                  |                                 |
-|---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| add     | Adds a single element with the specified value to the heap while maintaining the appropriate heap property.                                                  | add: (val: number) => number    |null          |
-| addList | Adds an array of elements to the heap and maintains the appropriate heap property after each addition.                                                       | addList(values: number[]): void |
-| poll    | Removes and returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element.                        | poll(): number                  | null                      |
-| peek    | Returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element, without removing it from the heap. | peek(): number                  | null                      |
-| size    | Returns the number of elements currently present in the heap.                                                                                                | size(): number                  |
-| isLeaf  | Checks if the element at the specified index in the heap is a leaf node.                                                                                     | isLeaf(index: number): boolean  |
+| Method  | Description                                                                                                                                                                                                                            |                                 |
+|---------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
+| add     | Adds a single element with the specified value to the heap while maintaining the appropriate heap property. It returns the new maximum element in a Max Heap or the new minimum element in a Min Heap, or `null` if the heap is empty. | add: (val: number) => number    |null          |
+| addList | Adds an array of elements to the heap and maintains the appropriate heap property after each addition.                                                                                                                                 | addList(values: number[]): void |
+| poll    | Removes and returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element.                                                                                                  | poll(): number                  | null                      |
+| peek    | Returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element, without removing it from the heap.                                                                           | peek(): number                  | null                      |
+| size    | Returns the number of elements currently present in the heap.                                                                                                                                                                          | size(): number                  |
+| isLeaf  | Checks if the element at the specified index in the heap is a leaf node.                                                                                                                                                               | isLeaf(index: number): boolean  |
 
 
 ## maxHeap
