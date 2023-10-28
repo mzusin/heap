@@ -45,3 +45,33 @@ export const findKthSmallestValue = (values: number[], k: number): number|null =
 
     return heap.peek();
 };
+
+export const findTopKLargestElements = (values: number[], k: number): number[] => {
+    if(k < 0) return [];
+
+    const topK = [];
+    const heap = maxHeap(values);
+
+    for (let i = 0; i < k; i++) {
+        const topElement = heap.poll();
+        if (topElement === null) break;
+        topK.push(topElement);
+    }
+
+    return topK;
+};
+
+export const findTopKSmallestElements = (values: number[], k: number): number[] => {
+    if(k < 0) return [];
+
+    const topK = [];
+    const heap = minHeap(values);
+
+    for (let i = 0; i < k; i++) {
+        const topElement = heap.poll();
+        if (topElement === null) break;
+        topK.push(topElement);
+    }
+
+    return topK;
+};
