@@ -16,6 +16,6 @@ declare module 'mz-heap' {
     }
 
     export const heap: (type: HeapType, values?: number[]) => IHeap;
-    export const maxHeap: (values?: number[], k?: number) => IHeap;
-    export const minHeap: (values?: number[], k?: number) => IHeap;
+    export const maxHeap: (values?: number[]) => IHeap;
+    export const minHeap: (values?: number[]) => IHeap;
 }

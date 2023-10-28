@@ -19,7 +19,7 @@ import { HeapType } from './main';
  * The first algorithm is used when you do not know in advance how much and what kind of data there will be.
  * If you're getting elements one at a time, the heapify algorithm is not as good.
  */
-export const heap = (type: HeapType, _values?: number[], _k?: number) : IHeap => {
+export const heap = (type: HeapType, _values?: number[]) : IHeap => {
 
     const data: number[] = [];
 
@@ -110,36 +110,16 @@ export const heap = (type: HeapType, _values?: number[], _k?: number) : IHeap =>
      * To add a node, add it to the end of the tree,
      * and then correct the condition.
      */
-    const add = (val: number, k?: number) : number|null => {
+    const add = (val: number) : number|null => {
         data.push(val);
         bottomUp(data.length - 1);
 
-        if(k === undefined) {
-            k = _k;
-        }
-
-        if(k !== undefined) {
-            switch (type) {
-                case HeapType.MaxHeap: {
-                    if(size() > k){
-                        poll();
-                    }
-                    break;
-                }
-                case HeapType.MinHeap: {
-                    if(size() < k){
-                        poll();
-                    }
-                    break;
-                }
-            }
-        }
         return peek();
     };
 
-    const addList = (__values: number[], k?: number) => {
+    const addList = (__values: number[]) => {
         for(let i=0; i<__values.length; i++){
-            add(__values[i], k || _k);
+            add(__values[i]);
         }
     };
 
@@ -173,7 +153,7 @@ export const heap = (type: HeapType, _values?: number[], _k?: number) : IHeap =>
      */
     (() => {
         if(!_values) return;
-        addList(_values, _k);
+        addList(_values);
     })();
 
     // APIs -------------------------------

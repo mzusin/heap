@@ -6,10 +6,10 @@ export enum HeapType {
     MaxHeap = 2,
 }
 
-export const maxHeap = (values?: number[], k?: number) : IHeap => {
-    return heap(HeapType.MaxHeap, values, k);
+export const maxHeap = (values?: number[]) : IHeap => {
+    return heap(HeapType.MaxHeap, values);
 };
 
-export const minHeap = (values?: number[], k?: number) : IHeap => {
-    return heap(HeapType.MinHeap, values, k);
+export const minHeap = (values?: number[]) : IHeap => {
+    return heap(HeapType.MinHeap, values);
 };
