@@ -6,7 +6,7 @@ Typescript implementation of minimum and maximum heap (priority queue).
 
 | Method  | Description                                                                                                                                                  |                                 |
 |---------|--------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------|
-| add     | Adds a single element with the specified value to the heap while maintaining the appropriate heap property.                                                  | add(val: number): void          |
+| add     | Adds a single element with the specified value to the heap while maintaining the appropriate heap property.                                                  | add: (val: number) => number    |null          |
 | addList | Adds an array of elements to the heap and maintains the appropriate heap property after each addition.                                                       | addList(values: number[]): void |
 | poll    | Removes and returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element.                        | poll(): number                  | null                      |
 | peek    | Returns the root element of the heap, which is either the maximum (in a Max Heap) or the minimum (in a Min Heap) element, without removing it from the heap. | peek(): number                  | null                      |

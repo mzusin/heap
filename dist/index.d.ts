@@ -1,7 +1,7 @@
 declare module 'mz-heap' {
 
     export interface IHeap {
-        add: (val: number) => void;
+        add: (val: number) => number|null;
         addList: (values: number[]) => void;
         poll: () => number | null;
         peek: () => number | null;

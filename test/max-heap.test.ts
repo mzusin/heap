@@ -11,20 +11,11 @@ describe('Max Heap', () => {
     });
 
     it('should add elements and maintain the max heap property', () => {
-        heap.add(5);
-        expect(heap.peek()).toBe(5);
-
-        heap.add(3);
-        expect(heap.peek()).toBe(5);
-
-        heap.add(8);
-        expect(heap.peek()).toBe(8);
-
-        heap.add(2);
-        expect(heap.peek()).toBe(8);
-
-        heap.add(7);
-        expect(heap.peek()).toBe(8);
+        expect(heap.add(5)).toBe(5);
+        expect(heap.add(3)).toBe(5);
+        expect(heap.add(8)).toBe(8);
+        expect(heap.add(2)).toBe(8);
+        expect(heap.add(7)).toBe(8);
 
         expect(heap.size()).toBe(5);
     });

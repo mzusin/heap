@@ -106,10 +106,24 @@ export const heap = (type: HeapType) : IHeap => {
      * To add a node, add it to the end of the tree,
      * and then correct the condition.
      */
-    const add = (val: number) => {
+    const add = (val: number) : number|null => {
         data.push(val);
         bottomUp(data.length - 1);
+        return peek();
     };
+
+    /*
+    add(val) {
+        data.push(val);
+        bottomUp(this.data.length - 1);
+
+        if(size() > k){
+            poll();
+        }
+
+        return peek();
+    }
+     */
 
     const addList = (values: number[]) => {
         for(let i=0; i<values.length; i++){

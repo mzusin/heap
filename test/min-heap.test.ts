@@ -11,20 +11,11 @@ describe('Min Heap', () => {
     });
 
     it('should add elements and maintain the min heap property', () => {
-        heap.add(5);
-        expect(heap.peek()).toBe(5);
-
-        heap.add(3);
-        expect(heap.peek()).toBe(3);
-
-        heap.add(8);
-        expect(heap.peek()).toBe(3);
-
-        heap.add(2);
-        expect(heap.peek()).toBe(2);
-
-        heap.add(7);
-        expect(heap.peek()).toBe(2);
+        expect(heap.add(5)).toBe(5);
+        expect(heap.add(3)).toBe(3);
+        expect(heap.add(8)).toBe(3);
+        expect(heap.add(2)).toBe(2);
+        expect(heap.add(7)).toBe(2);
 
         expect(heap.size()).toBe(5);
     });

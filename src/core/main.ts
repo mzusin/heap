@@ -10,7 +10,11 @@ export const maxHeap = () : IHeap => {
     return heap(HeapType.MaxHeap);
 };
 
-
 export const minHeap = () : IHeap => {
     return heap(HeapType.MinHeap);
+};
+
+export const kLargest = (values: number[], k: number) => {
+    const heap = maxHeap();
+    heap.addList(values);
 };
