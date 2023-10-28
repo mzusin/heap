@@ -19,7 +19,7 @@ import { HeapType } from './main';
  * The first algorithm is used when you do not know in advance how much and what kind of data there will be.
  * If you're getting elements one at a time, the heapify algorithm is not as good.
  */
-export const heap = (type: HeapType) : IHeap => {
+export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
 
     const data: number[] = [];
 
@@ -106,28 +106,33 @@ export const heap = (type: HeapType) : IHeap => {
      * To add a node, add it to the end of the tree,
      * and then correct the condition.
      */
-    const add = (val: number) : number|null => {
+    const add = (val: number, _k?: number) : number|null => {
         data.push(val);
         bottomUp(data.length - 1);
-        return peek();
-    };
 
-    /*
-    add(val) {
-        data.push(val);
-        bottomUp(this.data.length - 1);
-
-        if(size() > k){
-            poll();
+        if(_k !== undefined) {
+            switch (type) {
+                case HeapType.MaxHeap: {
+                    if(size() > _k || k){
+                        poll();
+                    }
+                    break;
+                }
+                case HeapType.MinHeap: {
+                    if(size() < _k || k){
+                        poll();
+                    }
+                    break;
+                }
+            }
         }
 
         return peek();
-    }
-     */
+    };
 
-    const addList = (values: number[]) => {
-        for(let i=0; i<values.length; i++){
-            add(values[i]);
+    const addList = (_values: number[], _k?: number) => {
+        for(let i=0; i<_values.length; i++){
+            add(_values[i], _k || k);
         }
     };
 
@@ -156,6 +161,15 @@ export const heap = (type: HeapType) : IHeap => {
         return index >= Math.floor(n / 2) && index < n;
     };
 
+    /**
+     * Entry point ------------------------
+     */
+    (() => {
+        if(!values) return;
+        addList(values, k);
+    })();
+
+    // APIs -------------------------------
     return {
         add,
         addList,
