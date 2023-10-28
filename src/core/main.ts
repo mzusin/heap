@@ -15,16 +15,28 @@ export const minHeap = (values?: number[]) : IHeap => {
 };
 
 /**
- * Naive approach:
  * We can extract the maximum element from the max-heap k times
  * and the last element extracted will be the kth greatest element.
  * Each deletion operations takes O(log n) time,
  * so the total time complexity of this approach comes out to be O(k * log n).
  */
-export const findKthGreatest = (values: number[], k: number): number|null => {
+export const findKthLargestValue = (values: number[], k: number): number|null => {
     if(k < 0) return null;
 
     const heap = maxHeap(values);
+
+    for (let i = 0; i < k - 1; i++) {
+        const topElement = heap.poll();
+        if (topElement === null) break;
+    }
+
+    return heap.peek();
+};
+
+export const findKthSmallestValue = (values: number[], k: number): number|null => {
+    if(k < 0) return null;
+
+    const heap = minHeap(values);
 
     for (let i = 0; i < k - 1; i++) {
         const topElement = heap.poll();

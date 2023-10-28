@@ -8,6 +8,8 @@ Typescript implementation of minimum and maximum heap (priority queue).
 export const heap: (type: HeapType, values?: number[]) => IHeap;
 export const maxHeap: (values?: number[]) => IHeap;
 export const minHeap: (values?: number[]) => IHeap;
+export const findKthLargestValue: (values: number[], k: number) => number | null;
+export const findKthSmallestValue: (values: number[], k: number) => number | null;
 ```
 
 | Method    | Description                                                                                                                                                                                                                            |                                 |
