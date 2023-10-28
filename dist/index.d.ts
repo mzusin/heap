@@ -7,6 +7,7 @@ declare module 'mz-heap' {
         peek: () => number | null;
         size: () => number;
         isLeaf: (index: number) => boolean;
+        values: () => number[];
     }
 
     export enum HeapType {

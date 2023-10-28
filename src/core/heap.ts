@@ -19,7 +19,7 @@ import { HeapType } from './main';
  * The first algorithm is used when you do not know in advance how much and what kind of data there will be.
  * If you're getting elements one at a time, the heapify algorithm is not as good.
  */
-export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
+export const heap = (type: HeapType, _values?: number[], _k?: number) : IHeap => {
 
     const data: number[] = [];
 
@@ -28,6 +28,10 @@ export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
      */
     const size = () : number => {
         return data.length;
+    };
+
+    const values = () => {
+      return data;
     };
 
     /**
@@ -106,33 +110,36 @@ export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
      * To add a node, add it to the end of the tree,
      * and then correct the condition.
      */
-    const add = (val: number, _k?: number) : number|null => {
+    const add = (val: number, k?: number) : number|null => {
         data.push(val);
         bottomUp(data.length - 1);
 
-        if(_k !== undefined) {
+        if(k === undefined) {
+            k = _k;
+        }
+
+        if(k !== undefined) {
             switch (type) {
                 case HeapType.MaxHeap: {
-                    if(size() > _k || k){
+                    if(size() > k){
                         poll();
                     }
                     break;
                 }
                 case HeapType.MinHeap: {
-                    if(size() < _k || k){
+                    if(size() < k){
                         poll();
                     }
                     break;
                 }
             }
         }
-
         return peek();
     };
 
-    const addList = (_values: number[], _k?: number) => {
-        for(let i=0; i<_values.length; i++){
-            add(_values[i], _k || k);
+    const addList = (__values: number[], k?: number) => {
+        for(let i=0; i<__values.length; i++){
+            add(__values[i], k || _k);
         }
     };
 
@@ -165,8 +172,8 @@ export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
      * Entry point ------------------------
      */
     (() => {
-        if(!values) return;
-        addList(values, k);
+        if(!_values) return;
+        addList(_values, _k);
     })();
 
     // APIs -------------------------------
@@ -177,5 +184,6 @@ export const heap = (type: HeapType, values?: number[], k?: number) : IHeap => {
         peek,
         size,
         isLeaf,
+        values,
     }
 };

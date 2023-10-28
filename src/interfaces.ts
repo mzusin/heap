@@ -5,4 +5,5 @@ export interface IHeap {
     peek: () => number | null;
     size: () => number;
     isLeaf: (index: number) => boolean;
+    values: () => number[];
 }
