@@ -17,7 +17,7 @@ Typescript implementation of minimum and maximum heap (priority queue).
 ## maxHeap
 
 ```ts
-import { maxHeap } from './src/core/main';
+import { maxHeap } from 'mz-heap';
 
 const heap = maxHeap();
 
@@ -34,7 +34,7 @@ heap.poll();
 ```
 
 ```ts
-import { minHeap } from './src/core/main';
+import { minHeap } from 'mz-heap';
 
 const heap = minHeap();
 
