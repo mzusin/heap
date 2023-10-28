@@ -111,6 +111,12 @@ export const heap = (type: HeapType) : IHeap => {
         bottomUp(data.length - 1);
     };
 
+    const addList = (values: number[]) => {
+        for(let i=0; i<values.length; i++){
+            add(values[i]);
+        }
+    };
+
     /**
      * To delete a node, take the last node and put it instead of root,
      * and then correct the condition.
@@ -138,6 +144,7 @@ export const heap = (type: HeapType) : IHeap => {
 
     return {
         add,
+        addList,
         poll,
         peek,
         size,

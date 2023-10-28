@@ -102,4 +102,40 @@ describe('Min Heap', () => {
         expect(heap.isLeaf(2)).toBe(false);
         expect(heap.isLeaf(100)).toBe(false);
     });
+
+    it('addList should add an array of values to the heap and maintain the min heap property', () => {
+        heap.addList([5, 3, 8, 2, 7]);
+
+        // The expected order in a min heap is [2, 3, 8, 5, 7].
+        expect(heap.poll()).toBe(2);
+        expect(heap.poll()).toBe(3);
+        expect(heap.poll()).toBe(5);
+        expect(heap.poll()).toBe(7);
+        expect(heap.poll()).toBe(8);
+    });
+
+    it('addList should handle an empty array', () => {
+        heap.addList([]);
+
+        // The heap should remain empty.
+        expect(heap.size()).toBe(0);
+        expect(heap.poll()).toBeNull();
+    });
+
+    it('addList should maintain the min heap property for a large array', () => {
+        const largeArray = [10, 8, 6, 4, 2, 1, 9, 7, 5, 3];
+        heap.addList(largeArray);
+
+        // The expected order in a min heap is [1, 2, 6, 3, 4, 8, 9, 7, 5, 10].
+        expect(heap.poll()).toBe(1);
+        expect(heap.poll()).toBe(2);
+        expect(heap.poll()).toBe(3);
+        expect(heap.poll()).toBe(4);
+        expect(heap.poll()).toBe(5);
+        expect(heap.poll()).toBe(6);
+        expect(heap.poll()).toBe(7);
+        expect(heap.poll()).toBe(8);
+        expect(heap.poll()).toBe(9);
+        expect(heap.poll()).toBe(10);
+    });
 });

@@ -1,5 +1,5 @@
 {
-  "name": "heap",
+  "name": "mz-heap",
   "version": "1.0.0",
   "type": "module",
   "main": "./dist/mz-heap.min.js",
