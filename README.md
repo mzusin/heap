@@ -33,6 +33,8 @@ heap.poll();
 heap.poll();
 ```
 
+## minHeap
+
 ```ts
 import { minHeap } from 'mz-heap';
 
@@ -45,23 +47,6 @@ heap.addList([7, 10, 2]);
 console.log(heap.peek());
 console.log(heap.size());
 console.log(heap.isLeaf(1));
-
-heap.poll();
-heap.poll();
-```
-
-## minHeap
-
-```ts
-import { maxHeap } from './src/core/max-heap';
-
-const heap = maxHeap();
-
-heap.add(5);
-heap.add(3);
-
-console.log(heap.peek());
-console.log(heap.size());
 
 heap.poll();
 heap.poll();
