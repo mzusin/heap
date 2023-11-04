@@ -1,8 +1,17 @@
-import { minHeap, maxHeap } from './core/main';
+import {
+    minHeap, maxHeap,
+    findKthLargestValue,
+    findKthSmallestValue,
+    findTopKLargestElements, findTopKSmallestElements,
+} from './core/main';
 
 const api = {
     ...minHeap,
     ...maxHeap,
+    ...findKthLargestValue,
+    ...findKthSmallestValue,
+    ...findTopKLargestElements,
+    ...findTopKSmallestElements,
 };
 
 declare global {
