@@ -122,6 +122,24 @@ heap.poll();
     - Time complexity: **O(1)**
     - Space complexity: **O(1)**
 
+## HeapSort
+
+**Pros**
+
+- No extra memory space is required to work, unlike the Merge Sort or recursive Quick Sort.
+- The algorithm is efficient. Performance is optimal. This implies that no other sorting algorithms can perform better in comparison.
+- The Heap sort algorithm exhibits consistent performance. This means it performs equally well in the best, average and worst cases.
+- Quicksort has a disadvantage there as its worst case time complexity of O(n^2). Mergesort has the disadvantage that its memory complexity is O(n) whereas Heapsort is O(1).
+- [More](https://stackoverflow.com/questions/18163414/in-which-cases-do-we-use-heapsort)
+
+**Cons**
+
+- **It is unstable sort** - A stable sort maintains the relative order of items that have the same key. i.e the way they are present in initial array. Heapsort is unstable sort. It might rearrange the relative order. 
+- [Expensive constant factors](https://stackoverflow.com/questions/8311090/why-not-use-heap-sort-always)
+- Quicksort and mergesort are both easier to parallelize than heapsort.
+- Cache inefficient.
+- Not really adaptive (Doesn't get faster if given somewhat sorted array).
+
 ----------------
 
 ### Leetcode Questions

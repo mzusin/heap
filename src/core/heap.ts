@@ -130,13 +130,13 @@ export const heap = (type: HeapType, _values?: number[]) : IHeap => {
     const poll = () : number|null => {
         if(size() <= 0) return null;
 
-        const min = data[0];
+        const root = data[0];
 
         data[0] = data[size() - 1];
         data.pop();
         topDown(0);
 
-        return min;
+        return root;
     };
 
     const peek = () : number|null => {
