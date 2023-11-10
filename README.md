@@ -9,6 +9,15 @@ export const heap: (type: HeapType, values?: number[]) => IHeap;
 export const maxHeap: (values?: number[]) => IHeap;
 export const minHeap: (values?: number[]) => IHeap;
 
+// O(N log N)
+export const findTopKLargestElementsNaive: (values: number[], k: number) => number[];
+export const findTopKSmallestElementsNaive: (values: number[], k: number) => number[];
+
+// O(K log N)
+export const findTopKLargestElementsNaive1: (values: number[], k: number) => number[];
+export const findTopKSmallestElementsNaive1: (values: number[], k: number) => number[];
+
+// O(N log K)
 export const findTopKLargestElements: (values: number[], k: number) => number[];
 export const findTopKSmallestElements: (values: number[], k: number) => number[];
 
