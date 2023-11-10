@@ -18,6 +18,7 @@ declare module 'mz-heap' {
     export const heap: (type: HeapType, values?: number[]) => IHeap;
     export const maxHeap: (values?: number[]) => IHeap;
     export const minHeap: (values?: number[]) => IHeap;
+    export const heapsort: (values: number[], isAsc?: boolean) => void;
 
     export const findTopKLargestElementsNaive: (values: number[], k: number) => number[];
     export const findTopKLargestElementsNaive1: (values: number[], k: number) => number[];
