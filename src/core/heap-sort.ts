@@ -1,6 +1,7 @@
 /**
  * In a binary heap, the leaves are at indices greater than or equal to N / 2.
  * https://stackoverflow.com/questions/9755721/how-can-building-a-heap-be-on-time-complexity
+ * https://www.youtube.com/watch?v=2DmK_H7IdTo
  */
 
 /**
@@ -61,9 +62,11 @@ export const heapsort = (values: number[], isAsc = true) => {
         topDown(values, sizeOfHeap, i, isAsc); // heapify = topDown
     }
 
-    // Extracting elements from the heap
-    // and place them at the end of the array in a sorted order.
-    // Start from the last index of the heap: (sizeOfHeap - 1)
+    // Now the array is sorted in reverse order.
+    // Start from the last index of the array (min value)
+    // and move to the beginning of the array.
+    // Place min in the beginning of the array by swapping it with the first element.
+    // First element goes to the end, and we consider it sorted.
     for (let i = sizeOfHeap - 1; i > 0; i--) {
 
         // Swap Root with Last Element:
@@ -71,10 +74,11 @@ export const heapsort = (values: number[], isAsc = true) => {
         // with the value at the current index i.
         // This effectively moves the current root (which is the maximum element in the heap)
         // to the end of the array.
-        // So after each iteration of the loop, the largest element is placed at the end of the array.
+        // So after each iteration of the loop, the largest element is placed at the end of the array,
+        // and we consider it sorted.
         [values[0], values[i]] = [values[i], values[0]];
 
-        // Heapify the Reduced Heap:
+        // Perform topDown (heapify) on the reduced heap (part of the array is already sorted):
         // After swapping, the topDown function is called to maintain the max heap property on the reduced heap.
         // The parameters passed to topDown are the array values,
         // the size of the reduced heap i,
