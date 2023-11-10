@@ -22,8 +22,8 @@ declare module 'mz-heap' {
     export const findTopKLargestElements: (values: number[], k: number) => number[];
     export const findTopKSmallestElements: (values: number[], k: number) => number[];
 
-    export const findKthLargestValueNaive: (values: number[], k: number) => number;
-    export const findKthSmallestValueNaive: (values: number[], k: number) => number;
+    export const findKthLargestValueNaive: (values: number[], k: number) => number|null;
+    export const findKthSmallestValueNaive: (values: number[], k: number) => number|null;
     export const findKthLargestValueNaive1: (values: number[], k: number) => number | null;
     export const findKthSmallestValueNaive1: (values: number[], k: number) => number | null;
     export const findKthLargestValue: (values: number[], k: number) => number | null;

@@ -3,14 +3,14 @@ import { maxHeap, minHeap } from './main';
 /**
  * O(N log N)
  */
-export const findKthLargestValueNaive = (values: number[], k: number) : number => {
+export const findKthLargestValueNaive = (values: number[], k: number): number|null => {
     return (values.sort((a, b) => b - a))[k - 1] ?? null;
 };
 
 /**
  * O(N log N)
  */
-export const findKthSmallestValueNaive = (values: number[], k: number) : number => {
+export const findKthSmallestValueNaive = (values: number[], k: number): number|null  => {
     return (values.sort((a, b) => a - b))[k - 1] ?? null;
 };
 
