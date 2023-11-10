@@ -14,7 +14,6 @@ export const minHeap = (values?: number[]) : IHeap => {
     return heap(HeapType.MinHeap, values);
 };
 
-
 export const findTopKLargestElements = (values: number[], k: number): number[] => {
     if(k < 0) return [];
 

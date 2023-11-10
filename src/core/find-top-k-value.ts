@@ -1,11 +1,11 @@
 import { maxHeap, minHeap } from './main';
 
 export const findKthLargestValueNaive = (values: number[], k: number) : number => {
-    return (values.sort((a, b) => b - a))[k - 1];
+    return (values.sort((a, b) => b - a))[k - 1] ?? null;
 };
 
 export const findKthSmallestValueNaive = (values: number[], k: number) : number => {
-    return (values.sort((a, b) => a - b))[k - 1];
+    return (values.sort((a, b) => a - b))[k - 1] ?? null;
 };
 
 /**
