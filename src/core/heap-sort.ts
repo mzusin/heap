@@ -49,7 +49,7 @@ const topDown = (values: number[], sizeOfHeap: number, nodeIndex: number, isAsc:
 export const heapsort = (values: number[], isAsc = true) => {
     const sizeOfHeap = values.length;
 
-    // Build heap (rearrange array).
+    // Build heap (rearrange array) = O(N)
     // Start from the last non-leaf node in the binary heap = Math.floor(N / 2).
     // Move towards the root.
     // Reason:
