@@ -9,10 +9,15 @@ export const heap: (type: HeapType, values?: number[]) => IHeap;
 export const maxHeap: (values?: number[]) => IHeap;
 export const minHeap: (values?: number[]) => IHeap;
 
-export const findKthLargestValue: (values: number[], k: number) => number | null;
-export const findKthSmallestValue: (values: number[], k: number) => number | null;
 export const findTopKLargestElements: (values: number[], k: number) => number[];
 export const findTopKSmallestElements: (values: number[], k: number) => number[];
+
+export const findKthLargestValueNaive: (values: number[], k: number) => number;
+export const findKthSmallestValueNaive: (values: number[], k: number) => number;
+export const findKthLargestValueNaive1: (values: number[], k: number) => number | null;
+export const findKthSmallestValueNaive1: (values: number[], k: number) => number | null;
+export const findKthLargestValue: (values: number[], k: number) => number | null;
+export const findKthSmallestValue: (values: number[], k: number) => number | null;
 ```
 
 | Method    | Description                                                                                                                                                                                                                            |                                 |
