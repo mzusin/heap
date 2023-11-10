@@ -136,4 +136,12 @@ describe('findTopKLargestElements', () => {
         // K is greater than the array size.
         expect(findTopKLargestElements(values, 10)).toEqual([2, 3, 5, 7, 8]);
     });
+
+    it('should find the top K largest elements for [1]', () => {
+        const values = [1];
+
+        // Find the top 1 largest element.
+        expect(findTopKLargestElements(values, 1)).toEqual([1]);
+
+    });
 });
